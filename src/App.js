@@ -1,6 +1,11 @@
 import React from 'react';
 import './App.css';
 
+const playing = () => {
+  window.alert("Let's do it!");
+  window.location.reload();
+}
+
 function App() {
   return (
     <div className="App">
@@ -9,7 +14,7 @@ function App() {
           <br/>
           <span id="puncuation"></span>
         </h1>
-        <div id="play" onClick={() => window.alert("Let's do it!")}>YES</div>
+        <div id="play" onClick={() => playing()}>YES</div>
       </header>
 
       <img 
