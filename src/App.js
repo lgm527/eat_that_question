@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Eat That Question
+          <br></br>
+          <span id="puncuation"></span>
+        </h1>
+        <div id="play" onClick={() => window.alert("Let's do it!")}>YES</div>
       </header>
+
+      <img 
+        src="https://cdn.jsdelivr.net/gh/MakeWeirdMusic/art@master/frank-zappa/frank-zappa.png"
+        id="zappaSVG" 
+        alt="zappa" />
     </div>
   );
 }
