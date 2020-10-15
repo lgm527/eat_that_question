@@ -1,0 +1,23 @@
+/* zappa svg */
+
+#zappaSVG {
+    width: 400px;
+    height: 400px;
+    transform: rotateY(180deg);
+    position: fixed;
+    right: -50%;
+    animation: slide 5s ease-in-out .5s forwards;
+  }
+  
+  @keyframes slide {
+    100% {
+      right: 0;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    #zappaSVG {
+      width: 400px;
+      height: 400px;
+    }
+  }
