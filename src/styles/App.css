@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat&family=Montserrat+Alternates:ital,wght@1,700&display=swap');
 
-/* inspo: https://www.zappa.com/music/official */
+/* inspo: 
+https://www.zappa.com/music/official
+https://fontsinuse.com/tags/8177/frank-zappa
+*/
 
 body {
   background-color: gray;
+  font-size: 20px;
 }
 
 .App {
@@ -39,7 +43,6 @@ h1 {
 }
 
 #puncuation {
-  /* font-family: 'Monofett', cursive; */
   font-size: 60px;
   cursor: pointer;
 }
