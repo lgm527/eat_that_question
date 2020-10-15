@@ -9,10 +9,14 @@ class App extends React.Component {
    }
 
   playing = () => {
-    window.alert("Let's do it!");
+    window.alert("Let's do it!")
     this.setState({playing: true})
   }
 
+  submitAnswer = (event, answer) => {
+    event.preventDefault()
+    this.setState({playing: false})
+  }
 
   render() { 
       return ( 
@@ -26,10 +30,11 @@ class App extends React.Component {
   
         {
           this.state.playing ?
-            <Question />
+            <Question submitAnswer={this.submitAnswer} />
             :
             <Landing />
         }
+
   
         <footer> <p>Made with&nbsp;<span role="img" aria-label="explode emoji">🤯</span>&nbsp;&&nbsp;<span role="img" aria-label="crystal ball emoji">🔮</span>&nbsp;&nbsp;by <a href="https://github.com/lgm527/" target="_blank" rel="noopener noreferrer">@lgm527</a></p></footer>
       </div>
