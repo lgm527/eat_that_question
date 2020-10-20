@@ -5,8 +5,10 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux';
-import store from './store';
+import { createStore } from 'redux';
+import manageGame from './reducers/manageGame';
 
+const store = createStore(manageGame)
 
 ReactDOM.render(
   <Provider store={store}>

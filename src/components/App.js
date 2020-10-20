@@ -2,20 +2,20 @@ import React from 'react';
 import '../styles/App.css';
 import Landing from './Landing';
 import Question from './Question';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
-  state = { 
-    playing: false
-   }
 
   playing = () => {
     window.alert("Let's do it!")
-    this.setState({playing: true})
+    // this.props.dispatch({ type: 'START_GAME' })
+    this.props.startGame();
   }
 
   submitAnswer = (event, answer) => {
     event.preventDefault()
-    this.setState({playing: false})
+    // convert to action dispatch
+    // this.setState({playing: false})
   }
 
   render() { 
@@ -29,7 +29,7 @@ class App extends React.Component {
         </header>
   
         {
-          this.state.playing ?
+          this.props.playing ?
             <Question submitAnswer={this.submitAnswer} />
             :
             <Landing />
@@ -42,4 +42,14 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    playing: state.playing
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  startGame: () => dispatch({type: 'START_GAME'})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
