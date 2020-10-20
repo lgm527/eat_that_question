@@ -4,10 +4,16 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import manageGame from './reducers/manageGame';
+
+const store = createStore(manageGame)
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
