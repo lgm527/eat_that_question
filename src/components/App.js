@@ -13,8 +13,7 @@ class App extends React.Component {
 
   submitAnswer = (event, answer) => {
     event.preventDefault()
-    // convert to action dispatch
-    // this.setState({playing: false})
+    // convert to action that will handle logic regarding if game will move to next question or complete game
   }
 
   render() { 
