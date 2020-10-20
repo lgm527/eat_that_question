@@ -8,7 +8,6 @@ class App extends React.Component {
 
   playing = () => {
     window.alert("Let's do it!")
-    // this.props.dispatch({ type: 'START_GAME' })
     this.props.startGame();
   }
 
