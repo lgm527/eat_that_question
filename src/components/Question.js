@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Question.css';
+import Timer from './Timer';
 
 class Question extends React.Component {
 
@@ -16,6 +17,7 @@ class Question extends React.Component {
     
     render() {
         return ( 
+            <><Timer />
             <form onSubmit={(event) => this.props.submitAnswer(event, this.state.currentAnswer)}>
                 <h3 id="question">Watch out where the huskies go...</h3>
                 <ul className="answers">
@@ -52,6 +54,7 @@ class Question extends React.Component {
                 </ul>
                 <input type="submit" value="submit"/>
             </form>
+            </>
          );
     }
 }
