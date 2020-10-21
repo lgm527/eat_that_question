@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/Timer.css';
 
 function Timer() {
 
@@ -9,9 +10,9 @@ function Timer() {
       }, [seconds]);
 
     return (
-        <div>
+        <p id="seconds">
             {seconds}
-        </div>
+        </p>
     )
 }
 
