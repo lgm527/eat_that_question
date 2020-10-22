@@ -15,8 +15,6 @@ class Question extends React.Component {
     }
     
     render() {
-        console.log(this.props);
-        console.log(this.state);
         return ( 
             <><Timer />
             <form onSubmit={(event) => this.props.submitAnswer(event, this.state.currentAnswer)}>

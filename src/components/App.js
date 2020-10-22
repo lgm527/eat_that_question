@@ -12,10 +12,15 @@ class App extends React.Component {
 
   submitAnswer = (event, answer) => {
     event.preventDefault()
-    if (answer === this.props.trivia[this.props.index].answer) {
-      this.props.nextQRightA()
+    if (this.props.trivia[this.props.index+1]) {
+      if (answer === this.props.trivia[this.props.index].answer) {
+        this.props.nextQRightA()
+      } else {
+        this.props.nextQ()
+      }
     } else {
-      this.props.nextQ()
+      this.props.rightA()
+      this.props.gameOver()
     }
     // convert to action that will handle logic regarding if game will move to next question or complete game/show score
   }
@@ -35,7 +40,7 @@ class App extends React.Component {
           this.props.playing ?
             <Question submitAnswer={this.submitAnswer} trivia={this.props.trivia[this.props.index]} />
             :
-            <Landing />
+            <Landing score={this.props.score} />
         }
 
   
@@ -53,6 +58,7 @@ const mapDispatchToProps = dispatch => ({
   startGame: () => dispatch({type: 'START_GAME'}),
   nextQRightA: () => dispatch({type: 'NEXT_Q_RIGHT_A'}),
   nextQ: () => dispatch({type: 'NEXT_Q'}),
+  rightA: () => dispatch({type: 'RIGHT_A'}),
   gameOver: () => dispatch({type: 'GAME_OVER'})
 })
 
