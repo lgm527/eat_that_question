@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 
+# meat
+/src/assets/meat.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -16,7 +16,7 @@ class App extends React.Component {
     // convert to action that will handle logic regarding if game will move to next question or complete game
   }
 
-  render() { 
+  render() {
       return ( 
         <div className="App">
         <header className="App-header">
