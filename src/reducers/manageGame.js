@@ -1,7 +1,9 @@
+const meat = require('../assets/meat.json');
+
 export default function manageGame(state = {
     playing: false,
-    trivia: [],
-    index: 1,
+    trivia: meat.meat,
+    index: 0,
     score: 0,
 }, action) {
     switch (action.type) {

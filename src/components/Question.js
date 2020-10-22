@@ -13,43 +13,44 @@ class Question extends React.Component {
             currentAnswer: event.target.value
         })
     }
-
     
     render() {
+        console.log(this.props);
+        console.log(this.state);
         return ( 
             <><Timer />
             <form onSubmit={(event) => this.props.submitAnswer(event, this.state.currentAnswer)}>
-                <h3 id="question">Watch out where the huskies go...</h3>
+                <h3 id="question">{this.props.trivia.question}</h3>
                 <ul className="answers">
     
                     <li><label>
                         <input 
                         type="radio"
                         name="answer"
-                        value="And don't you eat that yellow snow" 
-                        checked={this.state.currentAnswer === "And don't you eat that yellow snow"}
+                        value={this.props.trivia.choices[0]} 
+                        checked={this.state.currentAnswer === this.props.trivia.choices[0]}
                         onChange={this.selectAnswer}/> 
-                        <span>And don't you eat that yellow snow</span>
+                        <span>{this.props.trivia.choices[0]}</span>
                     </label></li>
     
                     <li><label>
                         <input 
                         type="radio"
                         name="answer"
-                        value="But shouldn't you already know" 
-                        checked={this.state.currentAnswer === "But shouldn't you already know"}
+                        value={this.props.trivia.choices[1]} 
+                        checked={this.state.currentAnswer === this.props.trivia.choices[1]}
                         onChange={this.selectAnswer}/>
-                        <span>But shouldn't you already know</span>
+                        <span>{this.props.trivia.choices[1]}</span>
                     </label></li>
     
                     <li><label>
                         <input 
                         type="radio"
                         name="answer"
-                        value="Could you really believe that" 
-                        checked={this.state.currentAnswer === "Could you really believe that"}
+                        value={this.props.trivia.choices[2]}
+                        checked={this.state.currentAnswer === this.props.trivia.choices[2]}
                         onChange={this.selectAnswer}/>
-                        <span>Could you really believe that</span>
+                        <span>{this.props.trivia.choices[2]}</span>
                     </label></li>                       
                 </ul>
                 <input type="submit" value="submit"/>

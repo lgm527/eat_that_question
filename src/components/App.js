@@ -7,16 +7,21 @@ import { connect } from 'react-redux';
 class App extends React.Component {
 
   playing = () => {
-    window.alert("Let's do it!")
-    this.props.startGame();
+    this.props.startGame()
   }
 
   submitAnswer = (event, answer) => {
     event.preventDefault()
-    // convert to action that will handle logic regarding if game will move to next question or complete game
+    if (answer === this.props.trivia[this.props.index].answer) {
+      this.props.nextQRightA()
+    } else {
+      this.props.nextQ()
+    }
+    // convert to action that will handle logic regarding if game will move to next question or complete game/show score
   }
 
   render() {
+    console.log(this.props);
       return ( 
         <div className="App">
         <header className="App-header">
@@ -28,7 +33,7 @@ class App extends React.Component {
   
         {
           this.props.playing ?
-            <Question submitAnswer={this.submitAnswer} />
+            <Question submitAnswer={this.submitAnswer} trivia={this.props.trivia[this.props.index]} />
             :
             <Landing />
         }
@@ -41,13 +46,14 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    playing: state.playing
-  }
+  return state
 }
 
 const mapDispatchToProps = dispatch => ({
-  startGame: () => dispatch({type: 'START_GAME'})
+  startGame: () => dispatch({type: 'START_GAME'}),
+  nextQRightA: () => dispatch({type: 'NEXT_Q_RIGHT_A'}),
+  nextQ: () => dispatch({type: 'NEXT_Q'}),
+  gameOver: () => dispatch({type: 'GAME_OVER'})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
