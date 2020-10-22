@@ -22,7 +22,6 @@ class App extends React.Component {
       this.props.rightA()
       this.props.gameOver()
     }
-    // convert to action that will handle logic regarding if game will move to next question or complete game/show score
   }
 
   render() {

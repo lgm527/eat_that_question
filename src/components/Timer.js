@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Timer.css';
 
 function Timer() {
 
     const [seconds, setSeconds] = useState(10)
 
-    React.useEffect(() => {
+    useEffect(() => {
         seconds > 0 && setTimeout(() => setSeconds(seconds - 1), 1000);
       }, [seconds]);
 
