@@ -11,13 +11,13 @@ class Question extends React.Component {
 
     state = START_STATE
 
-    selectAnswer = (event) => {
+    select = (event) => {
         this.setState({
             currentAnswer: event.target.value
         })
     }
 
-    submitAnswer = (event, answer) => {
+    submit = (event, answer) => {
         event.preventDefault()
         this.props.submitAnswer(answer)
         clearInterval(this._timer)
@@ -34,20 +34,18 @@ class Question extends React.Component {
     componentDidMount() {
         this.setState(START_STATE)
         // start timer
-        this._timer = setInterval(this.countdown, 1000)    
-        console.log('hi');
+        this._timer = setInterval(this.countdown, 1000)
     }
     
     componentWillUnmount() {
         // stop timer
         clearInterval(this._timer)
-        console.log('bye');
     }
     
     render() {
         return ( 
             <><Timer seconds={this.state.seconds} />
-            <form onSubmit={(event) => this.submitAnswer(event, this.state.currentAnswer)}>
+            <form onSubmit={(event) => this.submit(event, this.state.currentAnswer)}>
                 <h3 id="question">{this.props.trivia.question}</h3>
                 <ul className="answers">
     
@@ -57,7 +55,7 @@ class Question extends React.Component {
                         name="answer"
                         value={this.props.trivia.choices[0]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[0]}
-                        onChange={this.selectAnswer}/> 
+                        onChange={this.select}/> 
                         <span>{this.props.trivia.choices[0]}</span>
                     </label></li>
     
@@ -67,7 +65,7 @@ class Question extends React.Component {
                         name="answer"
                         value={this.props.trivia.choices[1]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[1]}
-                        onChange={this.selectAnswer}/>
+                        onChange={this.select}/>
                         <span>{this.props.trivia.choices[1]}</span>
                     </label></li>
     
@@ -77,7 +75,7 @@ class Question extends React.Component {
                         name="answer"
                         value={this.props.trivia.choices[2]}
                         checked={this.state.currentAnswer === this.props.trivia.choices[2]}
-                        onChange={this.selectAnswer}/>
+                        onChange={this.select}/>
                         <span>{this.props.trivia.choices[2]}</span>
                     </label></li>                       
                 </ul>
