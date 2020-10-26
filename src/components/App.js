@@ -10,8 +10,7 @@ class App extends React.Component {
     this.props.startGame()
   }
 
-  submitAnswer = (event, answer) => {
-    event.preventDefault()
+  submitAnswer = (answer) => {
     if (this.props.trivia[this.props.index+1]) {
       if (answer === this.props.trivia[this.props.index].answer) {
         this.props.nextQRightA()
@@ -25,7 +24,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
       return ( 
         <div className="App">
         <header className="App-header">
