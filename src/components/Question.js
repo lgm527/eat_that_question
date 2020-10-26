@@ -20,14 +20,13 @@ class Question extends React.Component {
     submitAnswer = (event, answer) => {
         event.preventDefault()
         this.props.submitAnswer(answer)
-        this.setState(START_STATE)
+        clearInterval(this._timer)
     }
 
     countdown = () => {
         this.setState({ seconds: this.state.seconds - 1 })
-        if (this.state.seconds <= 0) {
+        if (this.state.seconds === 0) {
             this.props.submitAnswer(this.state.currentAnswer)
-            this.setState(START_STATE)
             clearInterval(this._timer)
         }
     }
@@ -36,11 +35,13 @@ class Question extends React.Component {
         this.setState(START_STATE)
         // start timer
         this._timer = setInterval(this.countdown, 1000)    
+        console.log('hi');
     }
     
     componentWillUnmount() {
         // stop timer
         clearInterval(this._timer)
+        console.log('bye');
     }
     
     render() {
