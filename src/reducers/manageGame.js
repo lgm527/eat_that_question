@@ -11,6 +11,7 @@ export default function manageGame(state = {
             return {
                 ...state,
                 playing: true,
+                index: 0,
                 score: 0
             }
         case 'NEXT_Q_RIGHT_A':

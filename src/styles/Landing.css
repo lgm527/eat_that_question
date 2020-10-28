@@ -10,6 +10,12 @@
   margin-bottom: 0
 }
 
+button {
+  width: 100px;
+  border-radius: 25px;
+  padding: 5px;
+}
+
 /* zappa svg */
 
 #zappaSVG {
