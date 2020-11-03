@@ -1,3 +1,8 @@
+.landing {
+  height: 600px;
+  width: 100%;
+}
+
 #score {
   font-family: 'Corben', cursive;
   font-weight: bold;
@@ -16,11 +21,12 @@ button {
   padding: 5px;
 }
 
-/* zappa svg */
+/* zappa img */
 
-#zappaSVG {
-    width: 400px;
-    height: 400px;
+#zappaIMG {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     transform: rotateY(180deg);
     position: fixed;
     right: -50%;
@@ -33,9 +39,16 @@ button {
     }
   }
 
-  @media only screen and (max-width: 500px) {
-    #zappaSVG {
+  @media only screen and (max-height: 800px) {
+    #zappaIMG {
       width: 400px;
       height: 400px;
+    }
+  }
+
+  @media only screen and (max-height: 300px) {
+    #zappaIMG {
+      width: 200px;
+      height: 200px;
     }
   }
