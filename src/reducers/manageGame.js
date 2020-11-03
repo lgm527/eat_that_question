@@ -35,6 +35,13 @@ export default function manageGame(state = {
                 ...state,
                 playing: false
             }
+        case 'RESET_GAME':
+            return {
+                playing: false,
+                trivia: meat.meat,
+                index: 0,
+                score: null,
+            }
         default: 
             return state;
     }

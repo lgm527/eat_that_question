@@ -10,6 +10,10 @@ class App extends React.Component {
     this.props.startGame()
   }
 
+  reset = () => {
+    this.props.resetGame()
+  }
+
   submitAnswer = (answer) => {
     if (this.props.trivia[this.props.index+1]) {
       if (answer === this.props.trivia[this.props.index].answer) {
@@ -24,7 +28,7 @@ class App extends React.Component {
   }
 
   render() {
-    let questions = this.props.trivia.map((q, i) => <Question submitAnswer={this.submitAnswer} trivia={q} key={i} />)
+    let questions = this.props.trivia.map((q, i) => <Question submitAnswer={this.submitAnswer} trivia={q} key={i} reset={this.reset} />)
 
       return ( 
         <div className="App">
@@ -37,7 +41,7 @@ class App extends React.Component {
   
         {
           this.props.playing ?
-            questions[this.props.index]
+              questions[this.props.index]
             :
             <Landing score={this.props.score} playing={this.playing} />
         }
@@ -58,7 +62,8 @@ const mapDispatchToProps = dispatch => ({
   nextQRightA: () => dispatch({type: 'NEXT_Q_RIGHT_A'}),
   nextQ: () => dispatch({type: 'NEXT_Q'}),
   rightA: () => dispatch({type: 'RIGHT_A'}),
-  gameOver: () => dispatch({type: 'GAME_OVER'})
+  gameOver: () => dispatch({type: 'GAME_OVER'}),
+  resetGame: () => dispatch({type: 'RESET_GAME'})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

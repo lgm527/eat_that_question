@@ -44,7 +44,8 @@ class Question extends React.Component {
     
     render() {
         return ( 
-            <><Timer seconds={this.state.seconds} />
+            <div className="trivia">
+            <Timer seconds={this.state.seconds} />
             <form onSubmit={(event) => this.submit(event, this.state.currentAnswer)}>
                 <h3 id="question">{this.props.trivia.question}</h3>
                 <ul className="answers">
@@ -81,7 +82,8 @@ class Question extends React.Component {
                 </ul>
                 <input type="submit" value="submit"/>
             </form>
-            </>
+            <button onClick={() => this.props.reset()} id="reset">reset game</button>
+            </div>
          );
     }
 }
