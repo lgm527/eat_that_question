@@ -1,0 +1,54 @@
+{
+    "meat": [
+        {
+            "question": "Watch out where the huskies go",
+            "choices": ["And don't you eat that yellow snow", "But shouldn't you already know", "Could you really believe that"],
+            "answer": "And don't you eat that yellow snow"
+        },
+        {
+            "question": "Call any vegetable",
+            "choices": ["Call it never, ew", "Call it by name", "Call it all the time"],
+            "answer": "Call it by name"
+        },
+        {
+            "question": "Girl, you thought he was a man",
+            "choices": ["And he was", "But he wasn't", "But he was a muffin"],
+            "answer": "But he was a muffin"
+        },
+        {
+            "question": "Studebaker",
+            "choices": ["Avanti", "Hawk", "Lark"],
+            "answer": "Hawk"
+        },
+        {
+            "question": "The crux of the biscuit",
+            "choices": ["is the end", "is the apostrophe", "is delicious"],
+            "answer": "is the apostrophe"
+        },
+        {
+            "question": "Great",
+            "choices": ["Scott!", "Moogly Googly!", "Googly Moogly!"],
+            "answer": "Googly Moogly!"
+        },
+        {
+            "question": "I might be movin' to Montana soon, Just to raise me up a crop of",
+            "choices": ["Dental Floss", "Toothpaste", "Mouthwash"],
+            "answer": "Dental Floss"
+        },
+        {
+            "question": "Help, I'm a",
+            "choices": ["Rock", "Paper", "Scissors"],
+            "answer": "Rock"
+        },
+        {
+            "question": "He said for a nominal service charge",
+            "choices": ["I could reach nirvana tonight", "I could be royal tonight", "I could get home tonight"],
+            "answer": "I could reach nirvana tonight"
+        },
+        {
+            "question": "The adventures of",
+            "choices": ["George Pearcy!", "Greggery Peccary!", "Glenn Penn!"],
+            "answer": "Greggery Peccary!"
+        }
+    ]
+}
