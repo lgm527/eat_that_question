@@ -27,7 +27,6 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  height: 200px;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
 }
@@ -79,7 +78,13 @@ footer {
 /* media queries */
 
 @media only screen and (max-width: 500px) {
+  .App-header {
+    height: 150px;
+  }
   h1 {
+    font-size: 32px;
+  }
+  #puncuation {
     font-size: 32px;
   }
 }
