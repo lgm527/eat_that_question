@@ -83,7 +83,11 @@ footer {
   .App-header {
     padding: 10px;
   }
+  h1 {
+    font-size: 32px;
+  }
   footer {
     padding: 30px 0;
+    display: none;
   }
 }
