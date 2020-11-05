@@ -32,7 +32,7 @@ class App extends React.Component {
 
       return ( 
         <div className="App">
-        <header className="App-header">
+        <header>
           <h1>Eat That Question
             {
               this.props.playing ?
@@ -46,13 +46,14 @@ class App extends React.Component {
           </h1>
         </header>
   
+        <div className="main">
         {
           this.props.playing ?
               questions[this.props.index]
             :
             <Landing score={this.props.score} playing={this.playing} />
         }
-
+        </div>
   
         <footer> <p>Made with&nbsp;<span role="img" aria-label="explode emoji">🤯</span>&nbsp;&&nbsp;<span role="img" aria-label="crystal ball emoji">🔮</span>&nbsp;&nbsp;by <a href="https://github.com/lgm527/" target="_blank" rel="noopener noreferrer">@lgm527</a></p></footer>
       </div>
