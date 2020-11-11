@@ -21,16 +21,6 @@ button {
   padding: 5px;
 }
 
-/* galaxy */
-
-svg {
-  height: 200px;
-  width: 200px;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -20%) !important;
-}
-
 
 /* zappa img */
 

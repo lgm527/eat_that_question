@@ -15,7 +15,7 @@ body {
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(1, minmax(300px, 1fr));
-  grid-template-rows: repeat(1, 200px);
+  grid-template-rows: repeat(1, 150px);
 }
 
 /* header */
@@ -37,14 +37,17 @@ h1 {
   font-family: 'Corben', cursive;
 }
 
+#play {
+  cursor: pointer;
+}
+
+#play:hover {
+  color: red;
+}
+
 /* #puncuation::before {
   content: " !";
   animation: askTell infinite 3s;
-}
-
-#puncuation {
-  font-size: 60px;
-  cursor: pointer;
 }
 
 @keyframes askTell {

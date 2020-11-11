@@ -1,6 +1,6 @@
-import React from 'react';
 import { useLottie } from 'lottie-react';
 import galaxy from '../assets/galaxy.json';
+import '../styles/Galaxy.css';
 
 const Galaxy = () => {
 
