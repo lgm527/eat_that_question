@@ -15,7 +15,7 @@ body {
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(1, minmax(300px, 1fr));
-  grid-template-rows: repeat(1, 150px);
+  grid-template-rows: repeat(1, 200px);
 }
 
 /* header */
@@ -83,6 +83,9 @@ footer {
 /* media queries */
 
 @media only screen and (max-width: 500px) {
+  .App {
+    grid-template-rows: repeat(1, 150px);
+  }
   h1 {
     font-size: 32px;
   }
