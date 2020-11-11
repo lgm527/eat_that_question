@@ -28,21 +28,24 @@ class App extends React.Component {
   }
 
   render() {
-    let questions = this.props.trivia.map((q, i) => <Question submitAnswer={this.submitAnswer} trivia={q} key={i} reset={this.reset} />)
+    let questions = this.props.trivia.map((q, i) => <Question submitAnswer={this.submitAnswer} trivia={q} key={i} />)
 
       return ( 
         <div className="App">
         <header>
           <h1>Eat That Question
-            {
+          {
               this.props.playing ?
-              null
+              <>
+              <br/>
+              <span onClick={() => this.reset()} id="reset">RESET</span>
+              </>
               :
               <>
               <br/>
-              <span onClick={() => this.playing()} id="puncuation"></span>
+              <span onClick={() => this.playing()} id="play">PLAY</span>
               </>
-            }
+          }
           </h1>
         </header>
   

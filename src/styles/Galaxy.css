@@ -1,0 +1,7 @@
+svg {
+    height: 400px !important;
+    width: 400px !important;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 10%) !important;
+  }

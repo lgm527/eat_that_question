@@ -8,30 +8,19 @@ https://fontsinuse.com/tags/8177/frank-zappa
 body {
   background-color: gray;
   font-size: 20px;
-  margin: 0;
 }
 
 .App {
   text-align: center;
-  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-  'header'
-  'main'
-  'footer'
-  ;
   grid-gap: 5px;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  grid-template-rows: repeat(1, 200px);
 }
 
 /* header */
 
-.App > header {
-  grid-area: header;
-}
-
-header {
+.App-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,14 +37,17 @@ h1 {
   font-family: 'Corben', cursive;
 }
 
-#puncuation::before {
-  content: " !";
-  animation: askTell infinite 3s;
+#play, #reset {
+  cursor: pointer;
 }
 
-#puncuation {
-  font-size: 60px;
-  cursor: pointer;
+#play:hover, #reset:hover {
+  color: red;
+}
+
+/* #puncuation::before {
+  content: " !";
+  animation: askTell infinite 3s;
 }
 
 @keyframes askTell {
@@ -75,19 +67,9 @@ h1 {
   100% {
     color: purple;
   }
-}
-
-/* main */
-.App > .main {
-  grid-area: main;
-  overflow: auto;
-}
+} */
 
 /* footer */
-
-.App > footer {
-  grid-area: footer;
-}
 
 footer {
   position: fixed;
@@ -101,13 +83,10 @@ footer {
 /* media queries */
 
 @media only screen and (max-width: 500px) {
-  .App-header {
-    height: 150px;
+  .App {
+    grid-template-rows: repeat(1, 150px);
   }
   h1 {
-    font-size: 28px;
-  }
-  #puncuation {
     font-size: 32px;
   }
 }
