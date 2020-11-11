@@ -37,11 +37,11 @@ h1 {
   font-family: 'Corben', cursive;
 }
 
-#play {
+#play, #reset {
   cursor: pointer;
 }
 
-#play:hover {
+#play:hover, #reset:hover {
   color: red;
 }
 

@@ -82,7 +82,6 @@ class Question extends React.Component {
                 </ul>
                 <input type="submit" value="submit" id="submit" className="buttons"/>
             </form>
-            <button onClick={() => this.props.reset()} id="reset" className="buttons">reset</button>
             </div>
          );
     }
