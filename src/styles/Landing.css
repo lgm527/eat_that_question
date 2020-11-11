@@ -21,9 +21,20 @@ button {
   padding: 5px;
 }
 
+/* galaxy */
+
+svg {
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -20%) !important;
+}
+
+
 /* zappa img */
 
-#zappaIMG {
+/* #zappaIMG {
     width: 100%;
     max-width: 600px;
     height: auto;
@@ -51,4 +62,4 @@ button {
       width: 200px;
       height: 200px;
     }
-  }
+  } */

@@ -2,7 +2,7 @@ import React from 'react';
 import { useLottie } from 'lottie-react';
 import galaxy from '../assets/galaxy.json';
 
-const Galaxy = (props) => {
+const Galaxy = () => {
 
     const lottieOptions = {
         loop: true,
