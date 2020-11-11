@@ -35,7 +35,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Eat That Question
             <br/>
-            <span onClick={() => this.playing()} id="puncuation"></span>
+            <span onClick={() => this.playing()} id="puncuation">PLAY</span>
           </h1>
         </header>
   
