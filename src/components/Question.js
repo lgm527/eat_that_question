@@ -80,9 +80,9 @@ class Question extends React.Component {
                         <span>{this.props.trivia.choices[2]}</span>
                     </label></li>                       
                 </ul>
-                <input type="submit" value="submit"/>
+                <input type="submit" value="submit" id="submit" className="buttons"/>
             </form>
-            <button onClick={() => this.props.reset()} id="reset">reset game</button>
+            <button onClick={() => this.props.reset()} id="reset" className="buttons">reset</button>
             </div>
          );
     }
