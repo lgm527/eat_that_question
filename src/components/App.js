@@ -29,17 +29,6 @@ class App extends React.Component {
     } else {
       this.props.gameOver()
     }
-
-    // if (this.props.trivia[this.props.index+1]) {
-    //   if (answer === this.props.trivia[this.props.index].answer) {
-    //     this.props.nextQRightA()
-    //   } else {
-    //     this.props.nextQ()
-    //   }
-    // } else {
-    //   this.props.nextQ()
-    //   this.props.gameOver()
-    // }
   }
 
   render() {
