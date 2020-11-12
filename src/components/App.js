@@ -15,14 +15,18 @@ class App extends React.Component {
   }
 
   submitAnswer = (answer) => {
-    if (this.props.trivia[this.props.index+1]) {
-      if (answer === this.props.trivia[this.props.index].answer) {
-        this.props.nextQRightA()
-      } else {
-        this.props.nextQ()
-      }
-    } else {
+    // nextQ exists and correct A
+    if (this.props.trivia[this.props.index+1] && answer === this.props.trivia[this.props.index].answer) {
+      this.props.nextQRightA()
+    // nextQ exists and incorrect A
+    } else if (this.props.trivia[this.props.index+1] && answer !== this.props.trivia[this.props.index].answer) {
+      this.props.nextQ()
+    // nextQ does not exists and correct A, game is over
+    } else if (!this.props.trivia[this.props.index+1] && answer === this.props.trivia[this.props.index].answer) {
       this.props.rightA()
+      this.props.gameOver()
+    // nextQ does not exists and incorrect A, game is over
+    } else {
       this.props.gameOver()
     }
   }

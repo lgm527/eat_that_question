@@ -6,7 +6,7 @@ const Landing = (props) => {
 
     return ( 
         <div className="landing">
-            {props.score ? 
+            {props.score !== null ? 
             <>
             <p>score: <span id="score">{props.score}</span></p>
             <button onClick={() => props.playing()}  className="buttons">Play Again!</button>
