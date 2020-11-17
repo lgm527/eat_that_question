@@ -6,7 +6,7 @@ Eat That Question is a timed trivia game to test your knowledge of [Frank Zappa]
 
 [Play!](https://eat-that-question.netlify.app/)
 
-## Install
+## Usage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
