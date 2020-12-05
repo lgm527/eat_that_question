@@ -6,12 +6,20 @@ import { connect } from 'react-redux';
 
 class App extends React.Component {
 
-  playing = () => {
-    this.props.startGame()
+  playing = (event) => {
+    if (event.type === "click") {
+      this.props.startGame()
+    } else if (event.key === " " || event.key === "Enter") {
+      this.props.startGame()
+    }
   }
 
-  reset = () => {
-    this.props.resetGame()
+  reset = (event) => {
+    if (event.type === "click") {
+      this.props.resetGame()
+    } else if (event.key === " " || event.key === "Enter") {
+      this.props.resetGame()
+    }
   }
 
   submitAnswer = (answer) => {
@@ -42,12 +50,24 @@ class App extends React.Component {
               this.props.playing ?
               <>
               <br/>
-              <span onClick={() => this.reset()} id="reset">RESET</span>
+              <span 
+              onClick={(event) => this.reset(event)} 
+              id="reset" 
+              role="button"
+              tabIndex="0"
+              onKeyDown={(event) => this.reset(event)} 
+              >RESET</span>
               </>
               :
               <>
               <br/>
-              <span onClick={() => this.playing()} id="play">PLAY</span>
+              <span 
+              onClick={(event) => this.playing(event)} 
+              id="play" 
+              role="button"
+              tabIndex="0"
+              onKeyDown={(event) => this.playing(event)} 
+              >PLAY</span>
               </>
           }
           </h1>
@@ -60,7 +80,9 @@ class App extends React.Component {
             <Landing score={this.props.score} playing={this.playing} />
         }
   
-        <footer> <p>Made with&nbsp;<span role="img" aria-label="billy the mountain emoji">🏔</span>&nbsp;&&nbsp;<span role="img" aria-label="crystal ball emoji">🔮</span>&nbsp;by <a href="https://github.com/lgm527/" target="_blank" rel="noopener noreferrer">@lgm527</a></p></footer>
+
+        <footer> <p>Made with&nbsp;<span role="img" aria-label="billy the mountain emoji">🏔</span>&nbsp;&&nbsp;<span role="img" aria-label="crystal ball emoji">🔮</span>&nbsp;&nbsp;by <a href="https://github.com/lgm527/" target="_blank" rel="noopener noreferrer" alt="Laurell McCaffrey's Github Profile">@lgm527</a></p></footer>
+
       </div>
        );
   }
