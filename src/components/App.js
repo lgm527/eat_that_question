@@ -23,14 +23,18 @@ class App extends React.Component {
   }
 
   submitAnswer = (answer) => {
-    if (this.props.trivia[this.props.index+1]) {
-      if (answer === this.props.trivia[this.props.index].answer) {
-        this.props.nextQRightA()
-      } else {
-        this.props.nextQ()
-      }
-    } else {
+    // nextQ exists and correct A
+    if (this.props.trivia[this.props.index+1] && answer === this.props.trivia[this.props.index].answer) {
+      this.props.nextQRightA()
+    // nextQ exists and incorrect A
+    } else if (this.props.trivia[this.props.index+1] && answer !== this.props.trivia[this.props.index].answer) {
+      this.props.nextQ()
+    // nextQ does not exists and correct A, game is over
+    } else if (!this.props.trivia[this.props.index+1] && answer === this.props.trivia[this.props.index].answer) {
       this.props.rightA()
+      this.props.gameOver()
+    // nextQ does not exists and incorrect A, game is over
+    } else {
       this.props.gameOver()
     }
   }
@@ -76,7 +80,9 @@ class App extends React.Component {
             <Landing score={this.props.score} playing={this.playing} />
         }
   
+
         <footer> <p>Made with&nbsp;<span role="img" aria-label="billy the mountain emoji">🏔</span>&nbsp;&&nbsp;<span role="img" aria-label="crystal ball emoji">🔮</span>&nbsp;&nbsp;by <a href="https://github.com/lgm527/" target="_blank" rel="noopener noreferrer" alt="Laurell McCaffrey's Github Profile">@lgm527</a></p></footer>
+
       </div>
        );
   }
