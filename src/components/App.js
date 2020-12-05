@@ -6,12 +6,20 @@ import { connect } from 'react-redux';
 
 class App extends React.Component {
 
-  playing = () => {
-    this.props.startGame()
+  playing = (event) => {
+    if (event.type === "click") {
+      this.props.startGame()
+    } else if (event.key === " " || event.key === "Enter") {
+      this.props.startGame()
+    }
   }
 
-  reset = () => {
-    this.props.resetGame()
+  reset = (event) => {
+    if (event.type === "click") {
+      this.props.resetGame()
+    } else if (event.key === " " || event.key === "Enter") {
+      this.props.resetGame()
+    }
   }
 
   submitAnswer = (answer) => {
@@ -38,12 +46,24 @@ class App extends React.Component {
               this.props.playing ?
               <>
               <br/>
-              <span onClick={() => this.reset()} id="reset">RESET</span>
+              <span 
+              onClick={(event) => this.reset(event)} 
+              id="reset" 
+              role="button"
+              tabIndex="0"
+              onKeyDown={(event) => this.reset(event)} 
+              >RESET</span>
               </>
               :
               <>
               <br/>
-              <span onClick={() => this.playing()} id="play">PLAY</span>
+              <span 
+              onClick={(event) => this.playing(event)} 
+              id="play" 
+              role="button"
+              tabIndex="0"
+              onKeyDown={(event) => this.playing(event)} 
+              >PLAY</span>
               </>
           }
           </h1>
