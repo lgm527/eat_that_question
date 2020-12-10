@@ -40,13 +40,12 @@ h1 {
 #play, #reset {
   cursor: pointer;
   padding: 0 5px;
+  border-radius: 10px;
   background-color: #4a90e2;
-  box-shadow: 0 0 5px 5px #4a90e2;
 }
 
 #play:hover, #reset:hover {
   background-color: #7ed321;
-  box-shadow: 0 0 5px 5px #7ed321;
 }
 
 /* #puncuation::before {
