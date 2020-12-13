@@ -10,10 +10,8 @@ const Landing = (props) => {
             <>
             <p>score: <span id="score">{props.score}/10</span></p>
             </>
-             :  
-             
+             :               
             <Galaxy />
-
             }
         </div>
      );

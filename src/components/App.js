@@ -77,7 +77,7 @@ class App extends React.Component {
           this.props.playing ?
               questions[this.props.index]
             :
-            <Landing score={this.props.score} playing={this.playing} />
+            <Landing score={this.props.score} />
         }
   
 
