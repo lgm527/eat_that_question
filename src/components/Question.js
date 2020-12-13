@@ -54,6 +54,7 @@ class Question extends React.Component {
                         <input 
                         type="radio"
                         name="answer"
+                        tabIndex={1}
                         value={this.props.trivia.choices[0]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[0]}
                         onChange={this.select}/> 
@@ -64,6 +65,7 @@ class Question extends React.Component {
                         <input 
                         type="radio"
                         name="answer"
+                        tabIndex={2}
                         value={this.props.trivia.choices[1]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[1]}
                         onChange={this.select}/>
@@ -74,6 +76,7 @@ class Question extends React.Component {
                         <input 
                         type="radio"
                         name="answer"
+                        tabIndex={3}
                         value={this.props.trivia.choices[2]}
                         checked={this.state.currentAnswer === this.props.trivia.choices[2]}
                         onChange={this.select}/>
