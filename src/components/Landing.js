@@ -9,7 +9,7 @@ const Landing = (props) => {
             {props.score !== null ? 
             <>
             <p>score: <span id="score">{props.score}/10</span></p>
-            <button onClick={() => props.playing()}  className="buttons">Play Again!</button>
+            <button onClick={(event) => props.playing(event)}  className="buttons">Play Again!</button>
             </>
              :  
              

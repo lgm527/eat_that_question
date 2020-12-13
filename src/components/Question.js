@@ -50,41 +50,44 @@ class Question extends React.Component {
                 <h3 id="question">{this.props.trivia.question}</h3>
                 <ul className="answers">
     
-                    <li><label>
-                        <input 
+                    <li>
+                        <label htmlFor="answer0"></label>
+                        <input
                         type="radio"
                         aria-label="answer"
-                        aria-required="true"
                         name="answer"
+                        id="answer0"
                         value={this.props.trivia.choices[0]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[0]}
                         onChange={this.select}/> 
                         <span>{this.props.trivia.choices[0]}</span>
-                    </label></li>
+                    </li>
     
-                    <li><label>
-                        <input 
+                    <li>
+                        <label htmlFor="answer1"></label>
+                        <input
                         type="radio"
                         aria-label="answer"
-                        aria-required="true"
                         name="answer"
+                        id="answer1"
                         value={this.props.trivia.choices[1]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[1]}
                         onChange={this.select}/>
                         <span>{this.props.trivia.choices[1]}</span>
-                    </label></li>
+                    </li>
     
-                    <li><label>
-                        <input 
+                    <li>
+                        <label htmlFor="answer2"></label>
+                        <input
                         type="radio"
                         aria-label="answer"
-                        aria-required="true"
                         name="answer"
+                        id="answer2"
                         value={this.props.trivia.choices[2]}
                         checked={this.state.currentAnswer === this.props.trivia.choices[2]}
                         onChange={this.select}/>
                         <span>{this.props.trivia.choices[2]}</span>
-                    </label></li>                       
+                    </li>                       
                 </ul>
                 <input type="submit" value="submit" id="submit" className="buttons"/>
             </form>
