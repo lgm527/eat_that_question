@@ -48,6 +48,18 @@ h1 {
   background-color: #7ed321;
 }
 
+#score {
+  font-family: 'Corben', cursive;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow:
+  -1px -1px 0 #fff,  
+   1px -1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  margin-bottom: 0
+}
+
 /* #puncuation::before {
   content: " !";
   animation: askTell infinite 3s;
