@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   render() {
-    let questions = this.props.trivia.map((q, i) => <Question submitAnswer={this.submitAnswer} trivia={q} key={i} />)
+    let questions = this.props.trivia.map((q, i) => <Question submitAnswer={this.submitAnswer} trivia={q} key={i}/>)
 
       return ( 
         <div className="App">
@@ -57,6 +57,7 @@ class App extends React.Component {
               tabIndex="0"
               onKeyDown={(event) => this.reset(event)} 
               >RESET</span>
+              <br/>
               </>
               :
               <>
@@ -68,16 +69,23 @@ class App extends React.Component {
               tabIndex="0"
               onKeyDown={(event) => this.playing(event)} 
               >PLAY</span>
+              <br/>
               </>
+          }
+          {
+            this.props.score !== null ?
+              <span id="score">score: {this.props.score}/10</span>
+              :
+              null
           }
           </h1>
         </header>
   
         {
           this.props.playing ?
-              questions[this.props.index]
+            questions[this.props.index]
             :
-            <Landing score={this.props.score} />
+            <Landing />
         }
   
 

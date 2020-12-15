@@ -5,14 +5,8 @@ import Galaxy from './Galaxy';
 const Landing = (props) => {
 
     return ( 
-        <div className="landing">
-            {props.score !== null ? 
-            <>
-            <p>score: <span id="score">{props.score}/10</span></p>
-            </>
-             :
+        <div className="landing">            
             <Galaxy />
-            }
         </div>
      );
 }
