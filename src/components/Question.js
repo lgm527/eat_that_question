@@ -48,38 +48,48 @@ class Question extends React.Component {
             <Timer seconds={this.state.seconds} />
             <form onSubmit={(event) => this.submit(event, this.state.currentAnswer)}>
                 <h3 id="question">{this.props.trivia.question}</h3>
-                <ul className="answers">
-    
-                    <li><label>
-                        <input 
+                
+                <div className="answers">
+                    <label htmlFor="answer0"> 
+                        <input
                         type="radio"
+                        aria-label="answer"
                         name="answer"
+                        id="answer0"
                         value={this.props.trivia.choices[0]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[0]}
+                        aria-checked={this.state.currentAnswer === this.props.trivia.choices[0]}
                         onChange={this.select}/> 
-                        <span>{this.props.trivia.choices[0]}</span>
-                    </label></li>
+                        {this.props.trivia.choices[0]}
+                    </label>
     
-                    <li><label>
-                        <input 
+                    <label htmlFor="answer1">
+                        <input
                         type="radio"
+                        aria-label="answer"
                         name="answer"
+                        id="answer1"
                         value={this.props.trivia.choices[1]} 
                         checked={this.state.currentAnswer === this.props.trivia.choices[1]}
+                        aria-checked={this.state.currentAnswer === this.props.trivia.choices[1]}
                         onChange={this.select}/>
-                        <span>{this.props.trivia.choices[1]}</span>
-                    </label></li>
+                        {this.props.trivia.choices[1]}
+                    </label>
     
-                    <li><label>
-                        <input 
+                    <label htmlFor="answer2">
+                        <input
                         type="radio"
+                        aria-label="answer"
                         name="answer"
+                        id="answer2"
                         value={this.props.trivia.choices[2]}
                         checked={this.state.currentAnswer === this.props.trivia.choices[2]}
+                        aria-checked={this.state.currentAnswer === this.props.trivia.choices[2]}
                         onChange={this.select}/>
-                        <span>{this.props.trivia.choices[2]}</span>
-                    </label></li>                       
-                </ul>
+                        {this.props.trivia.choices[2]}
+                    </label>                       
+                </div>
+
                 <input type="submit" value="submit" id="submit" className="buttons"/>
             </form>
             </div>

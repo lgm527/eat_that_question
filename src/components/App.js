@@ -83,7 +83,7 @@ class App extends React.Component {
   
         {
           this.props.playing ?
-              questions[this.props.index]
+            questions[this.props.index]
             :
             <Landing />
         }
